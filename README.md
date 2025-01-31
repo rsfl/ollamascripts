@@ -1,5 +1,5 @@
 # ollamascripts
-These are scripts to extract and create logs from ollama. Either from prompts or turn current logs into json.
+These are scripts to extract and create logs from ollama. Either from prompts or turn current logs into json,csv
 
 - One script turns original ollama logs to .json formated logs
 - The other script runs automatically random prompts to create prompts outputs
