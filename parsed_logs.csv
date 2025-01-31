@@ -1,0 +1,1338 @@
+Timestamp,Level,Source,Message
+2025/01/31 13:55:47,,,"2025/01/31 13:55:47 routes.go:1187: INFO server config env=""map[CUDA_VISIBLE_DEVICES: GPU_DEVICE_ORDINAL: HIP_VISIBLE_DEVICES: HSA_OVERRIDE_GFX_VERSION: HTTPS_PROXY: HTTP_PROXY: NO_PROXY: OLLAMA_DEBUG:true OLLAMA_FLASH_ATTENTION:false OLLAMA_GPU_OVERHEAD:0 OLLAMA_HOST:http://127.0.0.1:11434 OLLAMA_INTEL_GPU:false OLLAMA_KEEP_ALIVE:5m0s OLLAMA_KV_CACHE_TYPE: OLLAMA_LLM_LIBRARY: OLLAMA_LOAD_TIMEOUT:5m0s OLLAMA_MAX_LOADED_MODELS:0 OLLAMA_MAX_QUEUE:512 OLLAMA_MODELS:/ssd OLLAMA_MULTIUSER_CACHE:false OLLAMA_NOHISTORY:false OLLAMA_NOPRUNE:false OLLAMA_NUM_PARALLEL:0 OLLAMA_ORIGINS:[http://localhost https://localhost http://localhost:* https://localhost:* http://127.0.0.1 https://127.0.0.1 http://127.0.0.1:* https://127.0.0.1:* http://0.0.0.0 https://0.0.0.0 http://0.0.0.0:* https://0.0.0.0:* app://* file://* tauri://* vscode-webview://*] OLLAMA_SCHED_SPREAD:false ROCR_VISIBLE_DEVICES: http_proxy: https_proxy: no_proxy:]"""
+,INFO,images.go:432,total blobs: 5
+,INFO,images.go:439,total unused blobs removed: 0
+,,,[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+,,,"[GIN-debug] [WARNING] Running in ""debug"" mode. Switch to ""release"" mode in production."
+,,,- using env:	export GIN_MODE=release
+,,,- using code:	gin.SetMode(gin.ReleaseMode)
+,,,[GIN-debug] POST   /api/pull                 --> github.com/ollama/ollama/server.(*Server).PullHandler-fm (5 handlers)
+,,,[GIN-debug] POST   /api/generate             --> github.com/ollama/ollama/server.(*Server).GenerateHandler-fm (5 handlers)
+,,,[GIN-debug] POST   /api/chat                 --> github.com/ollama/ollama/server.(*Server).ChatHandler-fm (5 handlers)
+,,,[GIN-debug] POST   /api/embed                --> github.com/ollama/ollama/server.(*Server).EmbedHandler-fm (5 handlers)
+,,,[GIN-debug] POST   /api/embeddings           --> github.com/ollama/ollama/server.(*Server).EmbeddingsHandler-fm (5 handlers)
+,,,[GIN-debug] POST   /api/create               --> github.com/ollama/ollama/server.(*Server).CreateHandler-fm (5 handlers)
+,,,[GIN-debug] POST   /api/push                 --> github.com/ollama/ollama/server.(*Server).PushHandler-fm (5 handlers)
+,,,[GIN-debug] POST   /api/copy                 --> github.com/ollama/ollama/server.(*Server).CopyHandler-fm (5 handlers)
+,,,[GIN-debug] DELETE /api/delete               --> github.com/ollama/ollama/server.(*Server).DeleteHandler-fm (5 handlers)
+,,,[GIN-debug] POST   /api/show                 --> github.com/ollama/ollama/server.(*Server).ShowHandler-fm (5 handlers)
+,,,[GIN-debug] POST   /api/blobs/:digest        --> github.com/ollama/ollama/server.(*Server).CreateBlobHandler-fm (5 handlers)
+,,,[GIN-debug] HEAD   /api/blobs/:digest        --> github.com/ollama/ollama/server.(*Server).HeadBlobHandler-fm (5 handlers)
+,,,[GIN-debug] GET    /api/ps                   --> github.com/ollama/ollama/server.(*Server).PsHandler-fm (5 handlers)
+,,,[GIN-debug] POST   /v1/chat/completions      --> github.com/ollama/ollama/server.(*Server).ChatHandler-fm (6 handlers)
+,,,[GIN-debug] POST   /v1/completions           --> github.com/ollama/ollama/server.(*Server).GenerateHandler-fm (6 handlers)
+,,,[GIN-debug] POST   /v1/embeddings            --> github.com/ollama/ollama/server.(*Server).EmbedHandler-fm (6 handlers)
+,,,[GIN-debug] GET    /v1/models                --> github.com/ollama/ollama/server.(*Server).ListHandler-fm (6 handlers)
+,,,[GIN-debug] GET    /v1/models/:model         --> github.com/ollama/ollama/server.(*Server).ShowHandler-fm (6 handlers)
+,,,[GIN-debug] GET    /                         --> github.com/ollama/ollama/server.(*Server).GenerateRoutes.func1 (5 handlers)
+,,,[GIN-debug] GET    /api/tags                 --> github.com/ollama/ollama/server.(*Server).ListHandler-fm (5 handlers)
+,,,[GIN-debug] GET    /api/version              --> github.com/ollama/ollama/server.(*Server).GenerateRoutes.func2 (5 handlers)
+,,,[GIN-debug] HEAD   /                         --> github.com/ollama/ollama/server.(*Server).GenerateRoutes.func1 (5 handlers)
+,,,[GIN-debug] HEAD   /api/tags                 --> github.com/ollama/ollama/server.(*Server).ListHandler-fm (5 handlers)
+,,,[GIN-debug] HEAD   /api/version              --> github.com/ollama/ollama/server.(*Server).GenerateRoutes.func2 (5 handlers)
+,INFO,routes.go:1238,Listening on 127.0.0.1:11434 (version 0.5.7)
+,DEBUG,common.go:80,runners located
+,DEBUG,common.go:124,availableServers : found
+,DEBUG,common.go:124,availableServers : found
+,DEBUG,common.go:124,availableServers : found
+,INFO,routes.go:1267,Dynamic LLM libraries
+,DEBUG,routes.go:1268,Override detection logic by setting OLLAMA_LLM_LIBRARY
+,DEBUG,sched.go:105,starting llm scheduler
+,INFO,gpu.go:226,looking for compatible GPUs
+,DEBUG,gpu.go:99,searching for GPU discovery libraries for NVIDIA
+,DEBUG,gpu.go:517,Searching for GPU library
+,DEBUG,gpu.go:543,gpu library search
+,DEBUG,gpu.go:576,discovered GPU libraries
+,,,initializing /usr/lib/aarch64-linux-gnu/nvidia/libcuda.so.1.1
+,,,dlsym: cuInit - 0xffff39979184
+,,,dlsym: cuDriverGetVersion - 0xffff399791b4
+,,,dlsym: cuDeviceGetCount - 0xffff39979214
+,,,dlsym: cuDeviceGet - 0xffff399791e4
+,,,dlsym: cuDeviceGetAttribute - 0xffff39979364
+,,,dlsym: cuDeviceGetUuid - 0xffff39979274
+,,,dlsym: cuDeviceGetName - 0xffff39979244
+,,,dlsym: cuCtxCreate_v3 - 0xffff39979634
+,,,dlsym: cuMemGetInfo_v2 - 0xffff3998a410
+,,,dlsym: cuCtxDestroy - 0xffff399c6b40
+,,,calling cuInit
+,,,calling cuDriverGetVersion
+,,,raw version 0x2f1c
+,,,CUDA driver version: 12.6
+,,,calling cuDeviceGetCount
+,,,device count 1
+,DEBUG,gpu.go:134,detected GPUs
+,,,[GPU-79837b4d-ca64-5019-8b72-19b6b9af5bd8] CUDA totalMem 7619 mb
+,,,[GPU-79837b4d-ca64-5019-8b72-19b6b9af5bd8] CUDA freeMem 4698 mb
+,,,[GPU-79837b4d-ca64-5019-8b72-19b6b9af5bd8] Compute Capability 8.7
+,DEBUG,amd_linux.go:421,amdgpu driver not detected /sys/module/amdgpu
+,,,releasing cuda driver library
+,INFO,types.go:131,inference compute
+,DEBUG,gpu.go:406,updating system memory data
+,,,initializing /usr/lib/aarch64-linux-gnu/nvidia/libcuda.so.1.1
+,,,dlsym: cuInit - 0xffff39979184
+,,,dlsym: cuDriverGetVersion - 0xffff399791b4
+,,,dlsym: cuDeviceGetCount - 0xffff39979214
+,,,dlsym: cuDeviceGet - 0xffff399791e4
+,,,dlsym: cuDeviceGetAttribute - 0xffff39979364
+,,,dlsym: cuDeviceGetUuid - 0xffff39979274
+,,,dlsym: cuDeviceGetName - 0xffff39979244
+,,,dlsym: cuCtxCreate_v3 - 0xffff39979634
+,,,dlsym: cuMemGetInfo_v2 - 0xffff3998a410
+,,,dlsym: cuCtxDestroy - 0xffff399c6b40
+,,,calling cuInit
+,,,calling cuDriverGetVersion
+,,,raw version 0x2f1c
+,,,CUDA driver version: 12.6
+,,,calling cuDeviceGetCount
+,,,device count 1
+,DEBUG,gpu.go:456,updating cuda memory data
+,,,releasing cuda driver library
+,DEBUG,sched.go:181,updating default concurrency
+,DEBUG,sched.go:224,loading first model
+,DEBUG,memory.go:107,"time=2025-01-31T13:55:53.185-05:00 level=DEBUG source=memory.go:107 msg=evaluating library=cuda gpu_count=1 available=""[4.6 GiB]"""
+,DEBUG,memory.go:107,"time=2025-01-31T13:55:53.185-05:00 level=DEBUG source=memory.go:107 msg=evaluating library=cuda gpu_count=1 available=""[4.6 GiB]"""
+,DEBUG,memory.go:107,"time=2025-01-31T13:55:53.186-05:00 level=DEBUG source=memory.go:107 msg=evaluating library=cuda gpu_count=1 available=""[4.6 GiB]"""
+,DEBUG,memory.go:107,"time=2025-01-31T13:55:53.187-05:00 level=DEBUG source=memory.go:107 msg=evaluating library=cuda gpu_count=1 available=""[4.6 GiB]"""
+,DEBUG,gpu.go:406,updating system memory data
+,,,initializing /usr/lib/aarch64-linux-gnu/nvidia/libcuda.so.1.1
+,,,dlsym: cuInit - 0xffff39979184
+,,,dlsym: cuDriverGetVersion - 0xffff399791b4
+,,,dlsym: cuDeviceGetCount - 0xffff39979214
+,,,dlsym: cuDeviceGet - 0xffff399791e4
+,,,dlsym: cuDeviceGetAttribute - 0xffff39979364
+,,,dlsym: cuDeviceGetUuid - 0xffff39979274
+,,,dlsym: cuDeviceGetName - 0xffff39979244
+,,,dlsym: cuCtxCreate_v3 - 0xffff39979634
+,,,dlsym: cuMemGetInfo_v2 - 0xffff3998a410
+,,,dlsym: cuCtxDestroy - 0xffff399c6b40
+,,,calling cuInit
+,,,calling cuDriverGetVersion
+,,,raw version 0x2f1c
+,,,CUDA driver version: 12.6
+,,,calling cuDeviceGetCount
+,,,device count 1
+,DEBUG,gpu.go:456,updating cuda memory data
+,,,releasing cuda driver library
+,INFO,server.go:104,system memory
+,DEBUG,memory.go:107,"time=2025-01-31T13:55:53.288-05:00 level=DEBUG source=memory.go:107 msg=evaluating library=cuda gpu_count=1 available=""[4.6 GiB]"""
+,INFO,memory.go:356,offload to cuda
+,DEBUG,common.go:124,availableServers : found
+,DEBUG,common.go:124,availableServers : found
+,DEBUG,common.go:124,availableServers : found
+,DEBUG,common.go:124,availableServers : found
+,DEBUG,common.go:124,availableServers : found
+,DEBUG,common.go:124,availableServers : found
+,INFO,server.go:376,starting llama server
+,DEBUG,server.go:393,"time=2025-01-31T13:55:53.290-05:00 level=DEBUG source=server.go:393 msg=subprocess environment=""[PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin LD_LIBRARY_PATH=/usr/local/lib/ollama/cuda_jetpack6:/usr/local/lib/ollama:/usr/local/lib/ollama:/usr/local/lib/ollama/runners/cuda_jetpack6 CUDA_VISIBLE_DEVICES=GPU-79837b4d-ca64-5019-8b72-19b6b9af5bd8]"""
+,INFO,sched.go:449,loaded runners
+,INFO,server.go:555,waiting for llama runner to start responding
+,INFO,server.go:589,waiting for server to become available
+,INFO,runner.go:936,starting go runner
+,,,ggml_cuda_init: GGML_CUDA_FORCE_MMQ:    no
+,,,ggml_cuda_init: GGML_CUDA_FORCE_CUBLAS: no
+,,,ggml_cuda_init: found 1 CUDA devices:
+,,,"Device 0: Orin, compute capability 8.7, VMM: yes"
+,INFO,runner.go:937,"time=2025-01-31T13:55:54.151-05:00 level=INFO source=runner.go:937 msg=system info=""CUDA : ARCHS = 870 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : NEON = 1 | ARM_FMA = 1 | LLAMAFILE = 1 | AARCH64_REPACK = 1 | cgo(gcc)"" threads=6"
+,INFO,.:0,Server listening on 127.0.0.1:46481
+,,,llama_load_model_from_file: using device CUDA0 (Orin) - 4609 MiB free
+,,,llama_model_loader: loaded meta data with 22 key-value pairs and 291 tensors from /ssd/blobs/sha256-6a0746a1ec1aef3e7ec53868f220ff6e389f6f8ef87a01d77c96807de94ca2aa (version GGUF V3 (latest))
+,,,llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+,,,llama_model_loader: - kv   0:                       general.architecture str              = llama
+,,,llama_model_loader: - kv   1:                               general.name str              = Meta-Llama-3-8B-Instruct
+,,,llama_model_loader: - kv   2:                          llama.block_count u32              = 32
+,,,llama_model_loader: - kv   3:                       llama.context_length u32              = 8192
+,,,llama_model_loader: - kv   4:                     llama.embedding_length u32              = 4096
+,,,llama_model_loader: - kv   5:                  llama.feed_forward_length u32              = 14336
+,,,llama_model_loader: - kv   6:                 llama.attention.head_count u32              = 32
+,,,llama_model_loader: - kv   7:              llama.attention.head_count_kv u32              = 8
+,,,llama_model_loader: - kv   8:                       llama.rope.freq_base f32              = 500000.000000
+,,,llama_model_loader: - kv   9:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+,,,llama_model_loader: - kv  10:                          general.file_type u32              = 2
+,,,llama_model_loader: - kv  11:                           llama.vocab_size u32              = 128256
+,,,llama_model_loader: - kv  12:                 llama.rope.dimension_count u32              = 128
+,,,llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+,,,llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = llama-bpe
+,INFO,server.go:589,waiting for server to become available
+,,,"llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,128256]  = [""!"", ""\"""", ""#"", ""$"", ""%"", ""&"", ""'"", ..."
+,,,"llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,128256]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ..."
+,,,"llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,280147]  = [""Ġ Ġ"", ""Ġ ĠĠĠ"", ""ĠĠ ĠĠ"", ""..."
+,,,llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 128000
+,,,llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 128009
+,,,llama_model_loader: - kv  20:                    tokenizer.chat_template str              = {% set loop_messages = messages %}{% ...
+,,,llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+,,,llama_model_loader: - type  f32:   65 tensors
+,,,llama_model_loader: - type q4_0:  225 tensors
+,,,llama_model_loader: - type q6_K:    1 tensors
+,,,llm_load_vocab: control token: 128255 '<|reserved_special_token_250|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128254 '<|reserved_special_token_249|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128253 '<|reserved_special_token_248|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128251 '<|reserved_special_token_246|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128246 '<|reserved_special_token_241|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128243 '<|reserved_special_token_238|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128240 '<|reserved_special_token_235|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128239 '<|reserved_special_token_234|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128238 '<|reserved_special_token_233|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128237 '<|reserved_special_token_232|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128232 '<|reserved_special_token_227|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128228 '<|reserved_special_token_223|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128227 '<|reserved_special_token_222|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128225 '<|reserved_special_token_220|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128222 '<|reserved_special_token_217|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128215 '<|reserved_special_token_210|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128211 '<|reserved_special_token_206|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128210 '<|reserved_special_token_205|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128204 '<|reserved_special_token_199|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128203 '<|reserved_special_token_198|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128201 '<|reserved_special_token_196|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128197 '<|reserved_special_token_192|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128196 '<|reserved_special_token_191|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128195 '<|reserved_special_token_190|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128193 '<|reserved_special_token_188|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128191 '<|reserved_special_token_186|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128190 '<|reserved_special_token_185|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128185 '<|reserved_special_token_180|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128184 '<|reserved_special_token_179|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128182 '<|reserved_special_token_177|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128181 '<|reserved_special_token_176|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128177 '<|reserved_special_token_172|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128176 '<|reserved_special_token_171|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128175 '<|reserved_special_token_170|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128174 '<|reserved_special_token_169|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128173 '<|reserved_special_token_168|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128172 '<|reserved_special_token_167|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128168 '<|reserved_special_token_163|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128167 '<|reserved_special_token_162|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128166 '<|reserved_special_token_161|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128165 '<|reserved_special_token_160|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128162 '<|reserved_special_token_157|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128159 '<|reserved_special_token_154|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128155 '<|reserved_special_token_150|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128153 '<|reserved_special_token_148|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128152 '<|reserved_special_token_147|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128151 '<|reserved_special_token_146|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128148 '<|reserved_special_token_143|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128146 '<|reserved_special_token_141|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128144 '<|reserved_special_token_139|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128143 '<|reserved_special_token_138|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128141 '<|reserved_special_token_136|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128139 '<|reserved_special_token_134|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128138 '<|reserved_special_token_133|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128135 '<|reserved_special_token_130|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128133 '<|reserved_special_token_128|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128132 '<|reserved_special_token_127|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128131 '<|reserved_special_token_126|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128130 '<|reserved_special_token_125|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128128 '<|reserved_special_token_123|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128125 '<|reserved_special_token_120|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128121 '<|reserved_special_token_116|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128120 '<|reserved_special_token_115|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128119 '<|reserved_special_token_114|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128116 '<|reserved_special_token_111|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128112 '<|reserved_special_token_107|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128109 '<|reserved_special_token_104|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128107 '<|reserved_special_token_102|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128106 '<|reserved_special_token_101|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128105 '<|reserved_special_token_100|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128103 '<|reserved_special_token_98|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128100 '<|reserved_special_token_95|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128099 '<|reserved_special_token_94|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128098 '<|reserved_special_token_93|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128094 '<|reserved_special_token_89|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128088 '<|reserved_special_token_83|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128087 '<|reserved_special_token_82|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128086 '<|reserved_special_token_81|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128084 '<|reserved_special_token_79|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128082 '<|reserved_special_token_77|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128078 '<|reserved_special_token_73|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128075 '<|reserved_special_token_70|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128073 '<|reserved_special_token_68|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128072 '<|reserved_special_token_67|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128070 '<|reserved_special_token_65|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128065 '<|reserved_special_token_60|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128064 '<|reserved_special_token_59|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128062 '<|reserved_special_token_57|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128060 '<|reserved_special_token_55|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128059 '<|reserved_special_token_54|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128057 '<|reserved_special_token_52|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128056 '<|reserved_special_token_51|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128054 '<|reserved_special_token_49|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128051 '<|reserved_special_token_46|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128043 '<|reserved_special_token_38|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128042 '<|reserved_special_token_37|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128041 '<|reserved_special_token_36|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128040 '<|reserved_special_token_35|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128035 '<|reserved_special_token_30|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128033 '<|reserved_special_token_28|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128032 '<|reserved_special_token_27|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128029 '<|reserved_special_token_24|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128025 '<|reserved_special_token_20|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128024 '<|reserved_special_token_19|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128021 '<|reserved_special_token_16|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128020 '<|reserved_special_token_15|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128019 '<|reserved_special_token_14|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128018 '<|reserved_special_token_13|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128015 '<|reserved_special_token_10|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128013 '<|reserved_special_token_8|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128012 '<|reserved_special_token_7|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128010 '<|reserved_special_token_5|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128005 '<|reserved_special_token_3|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128004 '<|reserved_special_token_2|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128002 '<|reserved_special_token_0|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128249 '<|reserved_special_token_244|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128187 '<|reserved_special_token_182|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128180 '<|reserved_special_token_175|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128134 '<|reserved_special_token_129|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128179 '<|reserved_special_token_174|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128037 '<|reserved_special_token_32|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128045 '<|reserved_special_token_40|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128089 '<|reserved_special_token_84|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128212 '<|reserved_special_token_207|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128104 '<|reserved_special_token_99|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128205 '<|reserved_special_token_200|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128142 '<|reserved_special_token_137|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128028 '<|reserved_special_token_23|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128126 '<|reserved_special_token_121|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128198 '<|reserved_special_token_193|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128071 '<|reserved_special_token_66|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128092 '<|reserved_special_token_87|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128183 '<|reserved_special_token_178|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128140 '<|reserved_special_token_135|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128226 '<|reserved_special_token_221|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128007 '<|end_header_id|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128052 '<|reserved_special_token_47|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128053 '<|reserved_special_token_48|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128058 '<|reserved_special_token_53|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128150 '<|reserved_special_token_145|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128149 '<|reserved_special_token_144|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128209 '<|reserved_special_token_204|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128169 '<|reserved_special_token_164|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128157 '<|reserved_special_token_152|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128038 '<|reserved_special_token_33|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128178 '<|reserved_special_token_173|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128091 '<|reserved_special_token_86|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128115 '<|reserved_special_token_110|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128233 '<|reserved_special_token_228|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128145 '<|reserved_special_token_140|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128039 '<|reserved_special_token_34|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128136 '<|reserved_special_token_131|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128170 '<|reserved_special_token_165|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128236 '<|reserved_special_token_231|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128154 '<|reserved_special_token_149|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128049 '<|reserved_special_token_44|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128023 '<|reserved_special_token_18|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128003 '<|reserved_special_token_1|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128016 '<|reserved_special_token_11|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128113 '<|reserved_special_token_108|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128158 '<|reserved_special_token_153|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128223 '<|reserved_special_token_218|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128156 '<|reserved_special_token_151|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128008 '<|reserved_special_token_4|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128085 '<|reserved_special_token_80|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128160 '<|reserved_special_token_155|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128001 '<|end_of_text|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128110 '<|reserved_special_token_105|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128247 '<|reserved_special_token_242|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128122 '<|reserved_special_token_117|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128050 '<|reserved_special_token_45|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128221 '<|reserved_special_token_216|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128244 '<|reserved_special_token_239|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128248 '<|reserved_special_token_243|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128213 '<|reserved_special_token_208|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128006 '<|start_header_id|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128208 '<|reserved_special_token_203|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128074 '<|reserved_special_token_69|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128234 '<|reserved_special_token_229|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128083 '<|reserved_special_token_78|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128224 '<|reserved_special_token_219|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128055 '<|reserved_special_token_50|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128097 '<|reserved_special_token_92|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128206 '<|reserved_special_token_201|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128081 '<|reserved_special_token_76|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128068 '<|reserved_special_token_63|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128067 '<|reserved_special_token_62|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128046 '<|reserved_special_token_41|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128194 '<|reserved_special_token_189|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128069 '<|reserved_special_token_64|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128000 '<|begin_of_text|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128220 '<|reserved_special_token_215|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128214 '<|reserved_special_token_209|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128108 '<|reserved_special_token_103|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128200 '<|reserved_special_token_195|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128048 '<|reserved_special_token_43|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128027 '<|reserved_special_token_22|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128114 '<|reserved_special_token_109|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128235 '<|reserved_special_token_230|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128252 '<|reserved_special_token_247|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128199 '<|reserved_special_token_194|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128129 '<|reserved_special_token_124|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128245 '<|reserved_special_token_240|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128164 '<|reserved_special_token_159|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128124 '<|reserved_special_token_119|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128102 '<|reserved_special_token_97|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128036 '<|reserved_special_token_31|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128229 '<|reserved_special_token_224|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128163 '<|reserved_special_token_158|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128127 '<|reserved_special_token_122|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128111 '<|reserved_special_token_106|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128231 '<|reserved_special_token_226|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128188 '<|reserved_special_token_183|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128061 '<|reserved_special_token_56|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128137 '<|reserved_special_token_132|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128093 '<|reserved_special_token_88|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128095 '<|reserved_special_token_90|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128189 '<|reserved_special_token_184|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128090 '<|reserved_special_token_85|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128147 '<|reserved_special_token_142|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128219 '<|reserved_special_token_214|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128230 '<|reserved_special_token_225|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128217 '<|reserved_special_token_212|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128031 '<|reserved_special_token_26|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128030 '<|reserved_special_token_25|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128250 '<|reserved_special_token_245|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128192 '<|reserved_special_token_187|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128096 '<|reserved_special_token_91|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128186 '<|reserved_special_token_181|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128207 '<|reserved_special_token_202|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128171 '<|reserved_special_token_166|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128080 '<|reserved_special_token_75|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128077 '<|reserved_special_token_72|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128101 '<|reserved_special_token_96|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128079 '<|reserved_special_token_74|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128216 '<|reserved_special_token_211|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128014 '<|reserved_special_token_9|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128047 '<|reserved_special_token_42|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128202 '<|reserved_special_token_197|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128044 '<|reserved_special_token_39|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128161 '<|reserved_special_token_156|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128017 '<|reserved_special_token_12|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128066 '<|reserved_special_token_61|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128242 '<|reserved_special_token_237|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128118 '<|reserved_special_token_113|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128076 '<|reserved_special_token_71|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128034 '<|reserved_special_token_29|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128241 '<|reserved_special_token_236|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128026 '<|reserved_special_token_21|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128218 '<|reserved_special_token_213|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128063 '<|reserved_special_token_58|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128117 '<|reserved_special_token_112|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128011 '<|reserved_special_token_6|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128022 '<|reserved_special_token_17|>' is not marked as EOG
+,,,llm_load_vocab: control token: 128123 '<|reserved_special_token_118|>' is not marked as EOG
+,,,llm_load_vocab: special tokens cache size = 256
+,,,llm_load_vocab: token to piece cache size = 0.8000 MB
+,,,llm_load_print_meta: format           = GGUF V3 (latest)
+,,,llm_load_print_meta: arch             = llama
+,,,llm_load_print_meta: vocab type       = BPE
+,,,llm_load_print_meta: n_vocab          = 128256
+,,,llm_load_print_meta: n_merges         = 280147
+,,,llm_load_print_meta: vocab_only       = 0
+,,,llm_load_print_meta: n_ctx_train      = 8192
+,,,llm_load_print_meta: n_embd           = 4096
+,,,llm_load_print_meta: n_layer          = 32
+,,,llm_load_print_meta: n_head           = 32
+,,,llm_load_print_meta: n_head_kv        = 8
+,,,llm_load_print_meta: n_rot            = 128
+,,,llm_load_print_meta: n_swa            = 0
+,,,llm_load_print_meta: n_embd_head_k    = 128
+,,,llm_load_print_meta: n_embd_head_v    = 128
+,,,llm_load_print_meta: n_gqa            = 4
+,,,llm_load_print_meta: n_embd_k_gqa     = 1024
+,,,llm_load_print_meta: n_embd_v_gqa     = 1024
+,,,llm_load_print_meta: f_norm_eps       = 0.0e+00
+,,,llm_load_print_meta: f_norm_rms_eps   = 1.0e-05
+,,,llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+,,,llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+,,,llm_load_print_meta: f_logit_scale    = 0.0e+00
+,,,llm_load_print_meta: n_ff             = 14336
+,,,llm_load_print_meta: n_expert         = 0
+,,,llm_load_print_meta: n_expert_used    = 0
+,,,llm_load_print_meta: causal attn      = 1
+,,,llm_load_print_meta: pooling type     = 0
+,,,llm_load_print_meta: rope type        = 0
+,,,llm_load_print_meta: rope scaling     = linear
+,,,llm_load_print_meta: freq_base_train  = 500000.0
+,,,llm_load_print_meta: freq_scale_train = 1
+,,,llm_load_print_meta: n_ctx_orig_yarn  = 8192
+,,,llm_load_print_meta: rope_finetuned   = unknown
+,,,llm_load_print_meta: ssm_d_conv       = 0
+,,,llm_load_print_meta: ssm_d_inner      = 0
+,,,llm_load_print_meta: ssm_d_state      = 0
+,,,llm_load_print_meta: ssm_dt_rank      = 0
+,,,llm_load_print_meta: ssm_dt_b_c_rms   = 0
+,,,llm_load_print_meta: model type       = 8B
+,,,llm_load_print_meta: model ftype      = Q4_0
+,,,llm_load_print_meta: model params     = 8.03 B
+,,,llm_load_print_meta: model size       = 4.33 GiB (4.64 BPW)
+,,,llm_load_print_meta: general.name     = Meta-Llama-3-8B-Instruct
+,,,llm_load_print_meta: BOS token        = 128000 '<|begin_of_text|>'
+,,,llm_load_print_meta: EOS token        = 128009 '<|eot_id|>'
+,,,llm_load_print_meta: EOT token        = 128009 '<|eot_id|>'
+,,,llm_load_print_meta: LF token         = 128 'Ä'
+,,,llm_load_print_meta: EOG token        = 128009 '<|eot_id|>'
+,,,llm_load_print_meta: max token length = 256
+,,,"llm_load_tensors: tensor 'token_embd.weight' (q4_0) (and 47 others) cannot be used with preferred buffer type CPU_AARCH64, using CUDA_Host instead"
+,,,llm_load_tensors: offloading 27 repeating layers to GPU
+,,,llm_load_tensors: offloaded 27/33 layers to GPU
+,,,llm_load_tensors:    CUDA_Host model buffer size =  1277.96 MiB
+,,,llm_load_tensors:        CUDA0 model buffer size =  3159.84 MiB
+,,,load_all_data: buffer type CUDA_Host is not the default buffer type for device CUDA0 for async uploads
+,DEBUG,server.go:600,model load progress 0.06
+,DEBUG,server.go:600,model load progress 0.17
+,DEBUG,server.go:600,model load progress 0.21
+,DEBUG,server.go:600,model load progress 0.24
+,DEBUG,server.go:600,model load progress 0.27
+,DEBUG,server.go:600,model load progress 0.28
+,,,"load_all_data: using async uploads for device CUDA0, buffer type CUDA0, backend CUDA0"
+,DEBUG,server.go:600,model load progress 0.29
+,DEBUG,server.go:600,model load progress 0.33
+,DEBUG,server.go:600,model load progress 0.36
+,DEBUG,server.go:600,model load progress 0.40
+,DEBUG,server.go:600,model load progress 0.45
+,DEBUG,server.go:600,model load progress 0.49
+,DEBUG,server.go:600,model load progress 0.54
+,DEBUG,server.go:600,model load progress 0.58
+,DEBUG,server.go:600,model load progress 0.63
+,DEBUG,server.go:600,model load progress 0.67
+,DEBUG,server.go:600,model load progress 0.71
+,DEBUG,server.go:600,model load progress 0.76
+,DEBUG,server.go:600,model load progress 0.81
+,DEBUG,server.go:600,model load progress 0.86
+,DEBUG,server.go:600,model load progress 0.91
+,DEBUG,server.go:600,model load progress 0.97
+,DEBUG,server.go:600,model load progress 0.99
+,,,llama_new_context_with_model: n_seq_max     = 1
+,,,llama_new_context_with_model: n_ctx         = 2048
+,,,llama_new_context_with_model: n_ctx_per_seq = 2048
+,,,llama_new_context_with_model: n_batch       = 512
+,,,llama_new_context_with_model: n_ubatch      = 512
+,,,llama_new_context_with_model: flash_attn    = 0
+,,,llama_new_context_with_model: freq_base     = 500000.0
+,,,llama_new_context_with_model: freq_scale    = 1
+,,,llama_new_context_with_model: n_ctx_per_seq (2048) < n_ctx_train (8192) -- the full capacity of the model will not be utilized
+,,,"llama_kv_cache_init: kv_size = 2048, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 32, can_shift = 1"
+,,,"llama_kv_cache_init: layer 0: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 1: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 2: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 3: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 4: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 5: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 6: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 7: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 8: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 9: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 10: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 11: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 12: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 13: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 14: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 15: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 16: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 17: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 18: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 19: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 20: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 21: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 22: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 23: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 24: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 25: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 26: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 27: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 28: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 29: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 30: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,"llama_kv_cache_init: layer 31: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024"
+,,,llama_kv_cache_init:        CPU KV buffer size =    40.00 MiB
+,DEBUG,server.go:600,model load progress 1.00
+,,,llama_kv_cache_init:      CUDA0 KV buffer size =   216.00 MiB
+,,,"llama_new_context_with_model: KV self size  =  256.00 MiB, K (f16):  128.00 MiB, V (f16):  128.00 MiB"
+,,,llama_new_context_with_model:        CPU  output buffer size =     0.50 MiB
+,DEBUG,server.go:603,"model load completed, waiting for server to become available"
+,INFO,server.go:589,waiting for server to become available
+,,,llama_new_context_with_model:      CUDA0 compute buffer size =   677.48 MiB
+,,,llama_new_context_with_model:  CUDA_Host compute buffer size =    12.01 MiB
+,,,llama_new_context_with_model: graph nodes  = 1030
+,,,"llama_new_context_with_model: graph splits = 59 (with bs=512), 3 (with bs=1)"
+,INFO,server.go:594,llama runner started in 15.65 seconds
+,DEBUG,sched.go:462,finished setting up runner
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 13:58:51 | 200 |         2m58s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:466,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:02:12 | 200 |         3m20s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:06:05 | 200 |         3m50s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:07:46 | 200 |         1m41s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:07:58 | 200 | 11.270610948s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:10:13 | 200 |         2m12s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:11:03 | 200 |  49.97152226s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:11:25 | 200 | 22.216734826s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:12:49 | 200 |         1m16s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:14:48 | 200 |         1m58s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:15:10 | 200 | 21.777482767s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:16:32 | 200 |         1m21s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:18:57 | 200 |         2m25s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:19:24 | 200 | 26.489247883s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:21:20 | 200 |         1m55s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:24:59 | 200 |         3m38s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:25:39 | 200 | 39.038269292s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:27:55 | 200 |         2m13s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:28:19 | 200 | 23.160470603s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:29:55 | 200 |         1m36s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:32:18 | 200 |         2m21s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:34:58 | 200 |         2m39s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:37:34 | 200 |         2m35s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:39:28 | 200 |         1m53s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:41:16 | 200 |         1m47s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:43:04 | 200 |         1m48s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:44:55 | 200 |         1m50s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:46:52 | 200 |         1m56s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:48:12 | 200 |         1m17s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 14:48:21 | 200 |  8.894571689s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:341,"timer expired, expiring to unload"
+,DEBUG,sched.go:360,runner expired event received
+,DEBUG,sched.go:375,got lock to unload
+,DEBUG,gpu.go:406,updating system memory data
+,,,initializing /usr/lib/aarch64-linux-gnu/nvidia/libcuda.so.1.1
+,,,dlsym: cuInit - 0xffff39979184
+,,,dlsym: cuDriverGetVersion - 0xffff399791b4
+,,,dlsym: cuDeviceGetCount - 0xffff39979214
+,,,dlsym: cuDeviceGet - 0xffff399791e4
+,,,dlsym: cuDeviceGetAttribute - 0xffff39979364
+,,,dlsym: cuDeviceGetUuid - 0xffff39979274
+,,,dlsym: cuDeviceGetName - 0xffff39979244
+,,,dlsym: cuCtxCreate_v3 - 0xffff39979634
+,,,dlsym: cuMemGetInfo_v2 - 0xffff3998a410
+,,,dlsym: cuCtxDestroy - 0xffff399c6b40
+,,,calling cuInit
+,,,calling cuDriverGetVersion
+,,,raw version 0x2f1c
+,,,CUDA driver version: 12.6
+,,,calling cuDeviceGetCount
+,,,device count 1
+,DEBUG,gpu.go:456,updating cuda memory data
+,,,releasing cuda driver library
+,DEBUG,server.go:1079,stopping llama server
+,DEBUG,server.go:1085,waiting for llama server to exit
+,DEBUG,gpu.go:406,updating system memory data
+,,,initializing /usr/lib/aarch64-linux-gnu/nvidia/libcuda.so.1.1
+,,,dlsym: cuInit - 0xffff39979184
+,,,dlsym: cuDriverGetVersion - 0xffff399791b4
+,,,dlsym: cuDeviceGetCount - 0xffff39979214
+,,,dlsym: cuDeviceGet - 0xffff399791e4
+,,,dlsym: cuDeviceGetAttribute - 0xffff39979364
+,,,dlsym: cuDeviceGetUuid - 0xffff39979274
+,,,dlsym: cuDeviceGetName - 0xffff39979244
+,,,dlsym: cuCtxCreate_v3 - 0xffff39979634
+,,,dlsym: cuMemGetInfo_v2 - 0xffff3998a410
+,,,dlsym: cuCtxDestroy - 0xffff399c6b40
+,,,calling cuInit
+,,,calling cuDriverGetVersion
+,,,raw version 0x2f1c
+,,,CUDA driver version: 12.6
+,,,calling cuDeviceGetCount
+,,,device count 1
+,DEBUG,gpu.go:456,updating cuda memory data
+,,,releasing cuda driver library
+,DEBUG,gpu.go:406,updating system memory data
+,,,initializing /usr/lib/aarch64-linux-gnu/nvidia/libcuda.so.1.1
+,,,dlsym: cuInit - 0xffff39979184
+,,,dlsym: cuDriverGetVersion - 0xffff399791b4
+,,,dlsym: cuDeviceGetCount - 0xffff39979214
+,,,dlsym: cuDeviceGet - 0xffff399791e4
+,,,dlsym: cuDeviceGetAttribute - 0xffff39979364
+,,,dlsym: cuDeviceGetUuid - 0xffff39979274
+,,,dlsym: cuDeviceGetName - 0xffff39979244
+,,,dlsym: cuCtxCreate_v3 - 0xffff39979634
+,,,dlsym: cuMemGetInfo_v2 - 0xffff3998a410
+,,,dlsym: cuCtxDestroy - 0xffff399c6b40
+,,,calling cuInit
+,,,calling cuDriverGetVersion
+,,,raw version 0x2f1c
+,,,CUDA driver version: 12.6
+,,,calling cuDeviceGetCount
+,,,device count 1
+,DEBUG,gpu.go:456,updating cuda memory data
+,,,releasing cuda driver library
+,DEBUG,gpu.go:406,updating system memory data
+,,,initializing /usr/lib/aarch64-linux-gnu/nvidia/libcuda.so.1.1
+,,,dlsym: cuInit - 0xffff39979184
+,,,dlsym: cuDriverGetVersion - 0xffff399791b4
+,,,dlsym: cuDeviceGetCount - 0xffff39979214
+,,,dlsym: cuDeviceGet - 0xffff399791e4
+,,,dlsym: cuDeviceGetAttribute - 0xffff39979364
+,,,dlsym: cuDeviceGetUuid - 0xffff39979274
+,,,dlsym: cuDeviceGetName - 0xffff39979244
+,,,dlsym: cuCtxCreate_v3 - 0xffff39979634
+,,,dlsym: cuMemGetInfo_v2 - 0xffff3998a410
+,,,dlsym: cuCtxDestroy - 0xffff399c6b40
+,,,calling cuInit
+,,,calling cuDriverGetVersion
+,,,raw version 0x2f1c
+,,,CUDA driver version: 12.6
+,,,calling cuDeviceGetCount
+,,,device count 1
+,DEBUG,server.go:1089,llama server stopped
+,DEBUG,sched.go:380,runner released
+,DEBUG,gpu.go:456,updating cuda memory data
+,,,releasing cuda driver library
+,DEBUG,sched.go:659,gpu VRAM free memory converged after 1.89 seconds
+,DEBUG,sched.go:384,sending an unloaded event
+,DEBUG,sched.go:308,ignoring unload event with no pending requests
+,,,"[GIN] 2025/01/31 - 15:17:50 | 200 |     293.834µs |       127.0.0.1 | HEAD     ""/"""
+,,,"[GIN] 2025/01/31 - 15:17:50 | 200 |    5.333656ms |       127.0.0.1 | GET      ""/api/tags"""
+,,,"[GIN] 2025/01/31 - 15:18:13 | 200 |      65.314µs |       127.0.0.1 | HEAD     ""/"""
+,INFO,download.go:175,downloading 96c415656d37 in 16 292 MB part(s)
+,INFO,download.go:175,downloading 369ca498f347 in 1 387 B part(s)
+,INFO,download.go:175,downloading 6e4c38e1172f in 1 1.1 KB part(s)
+,INFO,download.go:175,downloading f4d24e9138dd in 1 148 B part(s)
+,INFO,download.go:175,downloading 40fb844194b2 in 1 487 B part(s)
+,,,"[GIN] 2025/01/31 - 15:26:09 | 200 |         7m56s |       127.0.0.1 | POST     ""/api/pull"""
+,DEBUG,gpu.go:406,updating system memory data
+,,,initializing /usr/lib/aarch64-linux-gnu/nvidia/libcuda.so.1.1
+,,,dlsym: cuInit - 0xffff39979184
+,,,dlsym: cuDriverGetVersion - 0xffff399791b4
+,,,dlsym: cuDeviceGetCount - 0xffff39979214
+,,,dlsym: cuDeviceGet - 0xffff399791e4
+,,,dlsym: cuDeviceGetAttribute - 0xffff39979364
+,,,dlsym: cuDeviceGetUuid - 0xffff39979274
+,,,dlsym: cuDeviceGetName - 0xffff39979244
+,,,dlsym: cuCtxCreate_v3 - 0xffff39979634
+,,,dlsym: cuMemGetInfo_v2 - 0xffff3998a410
+,,,dlsym: cuCtxDestroy - 0xffff399c6b40
+,,,calling cuInit
+,,,calling cuDriverGetVersion
+,,,raw version 0x2f1c
+,,,CUDA driver version: 12.6
+,,,calling cuDeviceGetCount
+,,,device count 1
+,DEBUG,gpu.go:456,updating cuda memory data
+,,,releasing cuda driver library
+,DEBUG,sched.go:224,loading first model
+,DEBUG,memory.go:107,"time=2025-01-31T15:27:00.744-05:00 level=DEBUG source=memory.go:107 msg=evaluating library=cuda gpu_count=1 available=""[4.8 GiB]"""
+,DEBUG,memory.go:107,"time=2025-01-31T15:27:00.746-05:00 level=DEBUG source=memory.go:107 msg=evaluating library=cuda gpu_count=1 available=""[4.8 GiB]"""
+,DEBUG,memory.go:107,"time=2025-01-31T15:27:00.747-05:00 level=DEBUG source=memory.go:107 msg=evaluating library=cuda gpu_count=1 available=""[4.8 GiB]"""
+,DEBUG,memory.go:107,"time=2025-01-31T15:27:00.748-05:00 level=DEBUG source=memory.go:107 msg=evaluating library=cuda gpu_count=1 available=""[4.8 GiB]"""
+,DEBUG,gpu.go:406,updating system memory data
+,,,initializing /usr/lib/aarch64-linux-gnu/nvidia/libcuda.so.1.1
+,,,dlsym: cuInit - 0xffff39979184
+,,,dlsym: cuDriverGetVersion - 0xffff399791b4
+,,,dlsym: cuDeviceGetCount - 0xffff39979214
+,,,dlsym: cuDeviceGet - 0xffff399791e4
+,,,dlsym: cuDeviceGetAttribute - 0xffff39979364
+,,,dlsym: cuDeviceGetUuid - 0xffff39979274
+,,,dlsym: cuDeviceGetName - 0xffff39979244
+,,,dlsym: cuCtxCreate_v3 - 0xffff39979634
+,,,dlsym: cuMemGetInfo_v2 - 0xffff3998a410
+,,,dlsym: cuCtxDestroy - 0xffff399c6b40
+,,,calling cuInit
+,,,calling cuDriverGetVersion
+,,,raw version 0x2f1c
+,,,CUDA driver version: 12.6
+,,,calling cuDeviceGetCount
+,,,device count 1
+,DEBUG,gpu.go:456,updating cuda memory data
+,,,releasing cuda driver library
+,INFO,server.go:104,system memory
+,DEBUG,memory.go:107,"time=2025-01-31T15:27:00.853-05:00 level=DEBUG source=memory.go:107 msg=evaluating library=cuda gpu_count=1 available=""[4.8 GiB]"""
+,INFO,memory.go:356,offload to cuda
+,DEBUG,common.go:124,availableServers : found
+,DEBUG,common.go:124,availableServers : found
+,DEBUG,common.go:124,availableServers : found
+,DEBUG,common.go:124,availableServers : found
+,DEBUG,common.go:124,availableServers : found
+,DEBUG,common.go:124,availableServers : found
+,INFO,server.go:376,starting llama server
+,DEBUG,server.go:393,"time=2025-01-31T15:27:00.857-05:00 level=DEBUG source=server.go:393 msg=subprocess environment=""[PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin LD_LIBRARY_PATH=/usr/local/lib/ollama/cuda_jetpack6:/usr/local/lib/ollama:/usr/local/lib/ollama:/usr/local/lib/ollama/runners/cuda_jetpack6 CUDA_VISIBLE_DEVICES=GPU-79837b4d-ca64-5019-8b72-19b6b9af5bd8]"""
+,INFO,sched.go:449,loaded runners
+,INFO,server.go:555,waiting for llama runner to start responding
+,INFO,server.go:589,waiting for server to become available
+,INFO,runner.go:936,starting go runner
+,,,ggml_cuda_init: GGML_CUDA_FORCE_MMQ:    no
+,,,ggml_cuda_init: GGML_CUDA_FORCE_CUBLAS: no
+,,,ggml_cuda_init: found 1 CUDA devices:
+,,,"Device 0: Orin, compute capability 8.7, VMM: yes"
+,INFO,runner.go:937,"time=2025-01-31T15:27:01.738-05:00 level=INFO source=runner.go:937 msg=system info=""CUDA : ARCHS = 870 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : NEON = 1 | ARM_FMA = 1 | LLAMAFILE = 1 | AARCH64_REPACK = 1 | cgo(gcc)"" threads=6"
+,INFO,.:0,Server listening on 127.0.0.1:38165
+,,,llama_load_model_from_file: using device CUDA0 (Orin) - 4814 MiB free
+,INFO,server.go:589,waiting for server to become available
+,,,llama_model_loader: loaded meta data with 26 key-value pairs and 339 tensors from /ssd/blobs/sha256-96c415656d377afbff962f6cdb2394ab092ccbcbaab4b82525bc4ca800fe8a49 (version GGUF V3 (latest))
+,,,llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+,,,llama_model_loader: - kv   0:                       general.architecture str              = qwen2
+,,,llama_model_loader: - kv   1:                               general.type str              = model
+,,,llama_model_loader: - kv   2:                               general.name str              = DeepSeek R1 Distill Qwen 7B
+,,,llama_model_loader: - kv   3:                           general.basename str              = DeepSeek-R1-Distill-Qwen
+,,,llama_model_loader: - kv   4:                         general.size_label str              = 7B
+,,,llama_model_loader: - kv   5:                          qwen2.block_count u32              = 28
+,,,llama_model_loader: - kv   6:                       qwen2.context_length u32              = 131072
+,,,llama_model_loader: - kv   7:                     qwen2.embedding_length u32              = 3584
+,,,llama_model_loader: - kv   8:                  qwen2.feed_forward_length u32              = 18944
+,,,llama_model_loader: - kv   9:                 qwen2.attention.head_count u32              = 28
+,,,llama_model_loader: - kv  10:              qwen2.attention.head_count_kv u32              = 4
+,,,llama_model_loader: - kv  11:                       qwen2.rope.freq_base f32              = 10000.000000
+,,,llama_model_loader: - kv  12:     qwen2.attention.layer_norm_rms_epsilon f32              = 0.000001
+,,,llama_model_loader: - kv  13:                          general.file_type u32              = 15
+,,,llama_model_loader: - kv  14:                       tokenizer.ggml.model str              = gpt2
+,,,llama_model_loader: - kv  15:                         tokenizer.ggml.pre str              = qwen2
+,,,"llama_model_loader: - kv  16:                      tokenizer.ggml.tokens arr[str,152064]  = [""!"", ""\"""", ""#"", ""$"", ""%"", ""&"", ""'"", ..."
+,,,"llama_model_loader: - kv  17:                  tokenizer.ggml.token_type arr[i32,152064]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ..."
+,,,"llama_model_loader: - kv  18:                      tokenizer.ggml.merges arr[str,151387]  = [""Ġ Ġ"", ""ĠĠ ĠĠ"", ""i n"", ""Ġ t"",..."
+,,,llama_model_loader: - kv  19:                tokenizer.ggml.bos_token_id u32              = 151646
+,,,llama_model_loader: - kv  20:                tokenizer.ggml.eos_token_id u32              = 151643
+,,,llama_model_loader: - kv  21:            tokenizer.ggml.padding_token_id u32              = 151643
+,,,llama_model_loader: - kv  22:               tokenizer.ggml.add_bos_token bool             = true
+,,,llama_model_loader: - kv  23:               tokenizer.ggml.add_eos_token bool             = false
+,,,llama_model_loader: - kv  24:                    tokenizer.chat_template str              = {% if not add_generation_prompt is de...
+,,,llama_model_loader: - kv  25:               general.quantization_version u32              = 2
+,,,llama_model_loader: - type  f32:  141 tensors
+,,,llama_model_loader: - type q4_K:  169 tensors
+,,,llama_model_loader: - type q6_K:   29 tensors
+,,,llm_load_vocab: control token: 151660 '<|fim_middle|>' is not marked as EOG
+,,,llm_load_vocab: control token: 151659 '<|fim_prefix|>' is not marked as EOG
+,,,llm_load_vocab: control token: 151653 '<|vision_end|>' is not marked as EOG
+,,,llm_load_vocab: control token: 151645 '<｜Assistant｜>' is not marked as EOG
+,,,llm_load_vocab: control token: 151644 '<｜User｜>' is not marked as EOG
+,,,llm_load_vocab: control token: 151655 '<|image_pad|>' is not marked as EOG
+,,,llm_load_vocab: control token: 151651 '<|quad_end|>' is not marked as EOG
+,,,llm_load_vocab: control token: 151646 '<｜begin▁of▁sentence｜>' is not marked as EOG
+,,,llm_load_vocab: control token: 151643 '<｜end▁of▁sentence｜>' is not marked as EOG
+,,,llm_load_vocab: control token: 151652 '<|vision_start|>' is not marked as EOG
+,,,llm_load_vocab: control token: 151647 '<|EOT|>' is not marked as EOG
+,,,llm_load_vocab: control token: 151654 '<|vision_pad|>' is not marked as EOG
+,,,llm_load_vocab: control token: 151656 '<|video_pad|>' is not marked as EOG
+,,,llm_load_vocab: control token: 151661 '<|fim_suffix|>' is not marked as EOG
+,,,llm_load_vocab: control token: 151650 '<|quad_start|>' is not marked as EOG
+,,,llm_load_vocab: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+,,,llm_load_vocab: special tokens cache size = 22
+,,,llm_load_vocab: token to piece cache size = 0.9310 MB
+,,,llm_load_print_meta: format           = GGUF V3 (latest)
+,,,llm_load_print_meta: arch             = qwen2
+,,,llm_load_print_meta: vocab type       = BPE
+,,,llm_load_print_meta: n_vocab          = 152064
+,,,llm_load_print_meta: n_merges         = 151387
+,,,llm_load_print_meta: vocab_only       = 0
+,,,llm_load_print_meta: n_ctx_train      = 131072
+,,,llm_load_print_meta: n_embd           = 3584
+,,,llm_load_print_meta: n_layer          = 28
+,,,llm_load_print_meta: n_head           = 28
+,,,llm_load_print_meta: n_head_kv        = 4
+,,,llm_load_print_meta: n_rot            = 128
+,,,llm_load_print_meta: n_swa            = 0
+,,,llm_load_print_meta: n_embd_head_k    = 128
+,,,llm_load_print_meta: n_embd_head_v    = 128
+,,,llm_load_print_meta: n_gqa            = 7
+,,,llm_load_print_meta: n_embd_k_gqa     = 512
+,,,llm_load_print_meta: n_embd_v_gqa     = 512
+,,,llm_load_print_meta: f_norm_eps       = 0.0e+00
+,,,llm_load_print_meta: f_norm_rms_eps   = 1.0e-06
+,,,llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+,,,llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+,,,llm_load_print_meta: f_logit_scale    = 0.0e+00
+,,,llm_load_print_meta: n_ff             = 18944
+,,,llm_load_print_meta: n_expert         = 0
+,,,llm_load_print_meta: n_expert_used    = 0
+,,,llm_load_print_meta: causal attn      = 1
+,,,llm_load_print_meta: pooling type     = 0
+,,,llm_load_print_meta: rope type        = 2
+,,,llm_load_print_meta: rope scaling     = linear
+,,,llm_load_print_meta: freq_base_train  = 10000.0
+,,,llm_load_print_meta: freq_scale_train = 1
+,,,llm_load_print_meta: n_ctx_orig_yarn  = 131072
+,,,llm_load_print_meta: rope_finetuned   = unknown
+,,,llm_load_print_meta: ssm_d_conv       = 0
+,,,llm_load_print_meta: ssm_d_inner      = 0
+,,,llm_load_print_meta: ssm_d_state      = 0
+,,,llm_load_print_meta: ssm_dt_rank      = 0
+,,,llm_load_print_meta: ssm_dt_b_c_rms   = 0
+,,,llm_load_print_meta: model type       = 7B
+,,,llm_load_print_meta: model ftype      = Q4_K - Medium
+,,,llm_load_print_meta: model params     = 7.62 B
+,,,llm_load_print_meta: model size       = 4.36 GiB (4.91 BPW)
+,,,llm_load_print_meta: general.name     = DeepSeek R1 Distill Qwen 7B
+,,,llm_load_print_meta: BOS token        = 151646 '<｜begin▁of▁sentence｜>'
+,,,llm_load_print_meta: EOS token        = 151643 '<｜end▁of▁sentence｜>'
+,,,llm_load_print_meta: EOT token        = 151643 '<｜end▁of▁sentence｜>'
+,,,llm_load_print_meta: PAD token        = 151643 '<｜end▁of▁sentence｜>'
+,,,llm_load_print_meta: LF token         = 148848 'ÄĬ'
+,,,llm_load_print_meta: FIM PRE token    = 151659 '<|fim_prefix|>'
+,,,llm_load_print_meta: FIM SUF token    = 151661 '<|fim_suffix|>'
+,,,llm_load_print_meta: FIM MID token    = 151660 '<|fim_middle|>'
+,,,llm_load_print_meta: FIM PAD token    = 151662 '<|fim_pad|>'
+,,,llm_load_print_meta: FIM REP token    = 151663 '<|repo_name|>'
+,,,llm_load_print_meta: FIM SEP token    = 151664 '<|file_sep|>'
+,,,llm_load_print_meta: EOG token        = 151643 '<｜end▁of▁sentence｜>'
+,,,llm_load_print_meta: EOG token        = 151662 '<|fim_pad|>'
+,,,llm_load_print_meta: EOG token        = 151663 '<|repo_name|>'
+,,,llm_load_print_meta: EOG token        = 151664 '<|file_sep|>'
+,,,llm_load_print_meta: max token length = 256
+,,,"llm_load_tensors: tensor 'token_embd.weight' (q4_K) (and 38 others) cannot be used with preferred buffer type CPU_AARCH64, using CPU instead"
+,,,llm_load_tensors: offloading 25 repeating layers to GPU
+,,,llm_load_tensors: offloaded 25/29 layers to GPU
+,,,llm_load_tensors:          CPU model buffer size =   292.36 MiB
+,,,llm_load_tensors:    CUDA_Host model buffer size =   852.99 MiB
+,,,llm_load_tensors:        CUDA0 model buffer size =  3315.10 MiB
+,,,load_all_data: no device found for buffer type CPU for async uploads
+,,,load_all_data: buffer type CUDA_Host is not the default buffer type for device CUDA0 for async uploads
+,DEBUG,server.go:600,model load progress 0.07
+,DEBUG,server.go:600,model load progress 0.16
+,DEBUG,server.go:600,model load progress 0.20
+,DEBUG,server.go:600,model load progress 0.25
+,,,"load_all_data: using async uploads for device CUDA0, buffer type CUDA0, backend CUDA0"
+,DEBUG,server.go:600,model load progress 0.26
+,DEBUG,server.go:600,model load progress 0.29
+,DEBUG,server.go:600,model load progress 0.32
+,DEBUG,server.go:600,model load progress 0.37
+,DEBUG,server.go:600,model load progress 0.41
+,DEBUG,server.go:600,model load progress 0.46
+,DEBUG,server.go:600,model load progress 0.51
+,DEBUG,server.go:600,model load progress 0.55
+,DEBUG,server.go:600,model load progress 0.61
+,DEBUG,server.go:600,model load progress 0.66
+,DEBUG,server.go:600,model load progress 0.71
+,DEBUG,server.go:600,model load progress 0.76
+,DEBUG,server.go:600,model load progress 0.80
+,DEBUG,server.go:600,model load progress 0.85
+,DEBUG,server.go:600,model load progress 0.92
+,DEBUG,server.go:600,model load progress 0.97
+,DEBUG,server.go:600,model load progress 1.00
+,,,llama_new_context_with_model: n_seq_max     = 1
+,,,llama_new_context_with_model: n_ctx         = 2048
+,,,llama_new_context_with_model: n_ctx_per_seq = 2048
+,,,llama_new_context_with_model: n_batch       = 512
+,,,llama_new_context_with_model: n_ubatch      = 512
+,,,llama_new_context_with_model: flash_attn    = 0
+,,,llama_new_context_with_model: freq_base     = 10000.0
+,,,llama_new_context_with_model: freq_scale    = 1
+,,,llama_new_context_with_model: n_ctx_per_seq (2048) < n_ctx_train (131072) -- the full capacity of the model will not be utilized
+,,,"llama_kv_cache_init: kv_size = 2048, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 28, can_shift = 1"
+,,,"llama_kv_cache_init: layer 0: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 1: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 2: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 3: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 4: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 5: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 6: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 7: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 8: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 9: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 10: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 11: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 12: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 13: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 14: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 15: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 16: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 17: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 18: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 19: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 20: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 21: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 22: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 23: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 24: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 25: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 26: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,"llama_kv_cache_init: layer 27: n_embd_k_gqa = 512, n_embd_v_gqa = 512"
+,,,llama_kv_cache_init:        CPU KV buffer size =    12.00 MiB
+,,,llama_kv_cache_init:      CUDA0 KV buffer size =   100.00 MiB
+,,,"llama_new_context_with_model: KV self size  =  112.00 MiB, K (f16):   56.00 MiB, V (f16):   56.00 MiB"
+,,,llama_new_context_with_model:        CPU  output buffer size =     0.59 MiB
+,DEBUG,server.go:603,"model load completed, waiting for server to become available"
+,,,llama_new_context_with_model:      CUDA0 compute buffer size =   730.36 MiB
+,,,llama_new_context_with_model:  CUDA_Host compute buffer size =    11.01 MiB
+,,,llama_new_context_with_model: graph nodes  = 986
+,,,"llama_new_context_with_model: graph splits = 46 (with bs=512), 3 (with bs=1)"
+,INFO,server.go:594,llama runner started in 13.42 seconds
+,DEBUG,sched.go:462,finished setting up runner
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 15:30:34 | 200 |         3m33s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:466,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 15:32:49 | 200 |         2m15s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 15:35:02 | 200 |         2m12s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 15:35:16 | 200 |  9.246227257s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 15:37:29 | 200 |         2m11s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 15:40:55 | 200 |         3m25s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 15:45:33 | 200 |         4m37s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 15:48:39 | 200 |          3m4s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 15:52:14 | 200 |         3m34s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 15:56:59 | 200 |         4m44s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 16:01:41 | 200 |         4m41s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 16:10:18 | 200 |         8m36s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 16:18:49 | 200 |         8m30s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 16:27:42 | 200 |         8m52s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,DEBUG,cache.go:231,context limit hit - shifting
+,,,"[GIN] 2025/01/31 - 16:36:45 | 200 |          9m2s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 16:37:05 | 200 | 19.361743942s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 16:37:46 | 200 | 41.051095403s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 16:40:43 | 200 |         2m55s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 16:43:56 | 200 |         3m11s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 16:46:21 | 200 |         2m25s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 16:51:17 | 200 |         4m50s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 16:53:30 | 200 |         2m13s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,DEBUG,cache.go:231,context limit hit - shifting
+,,,"[GIN] 2025/01/31 - 17:04:04 | 200 |        10m33s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 17:04:36 | 200 | 31.886599656s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 17:08:09 | 200 |         3m33s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 17:09:46 | 200 |         1m35s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 17:16:50 | 200 |          7m3s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 17:22:03 | 200 |          5m8s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 17:22:44 | 200 | 41.159478936s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:575,evaluating already loaded
+,DEBUG,routes.go:1470,chat request
+,DEBUG,cache.go:104,loading cache slot
+,,,"[GIN] 2025/01/31 - 17:26:58 | 200 |         4m13s |       127.0.0.1 | POST     ""/api/chat"""
+,DEBUG,sched.go:407,context for request finished
+,DEBUG,sched.go:339,"runner with non-zero duration has gone idle, adding timer"
+,DEBUG,sched.go:357,after processing request finished event
+,DEBUG,sched.go:318,shutting down scheduler completed loop
+,DEBUG,sched.go:119,shutting down scheduler pending loop
+,DEBUG,sched.go:798,shutting down runner
+,DEBUG,server.go:1079,stopping llama server
+,DEBUG,server.go:1085,waiting for llama server to exit
+,DEBUG,server.go:1089,llama server stopped
