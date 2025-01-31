@@ -1,2 +1,6 @@
 # ollamascripts
-These are scripts to extract and create logs from ollama. Either from prompts or turn current logs into csv. 
+These are scripts to extract and create logs from ollama. Either from prompts or turn current logs into json.
+
+- One script turns original ollama logs to .json formated logs
+- The other script runs automatically random prompts to create prompts outputs
+- llama3:latest and DeekSeek-r1 (1.5) were used
