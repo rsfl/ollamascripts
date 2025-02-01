@@ -1,0 +1,20 @@
+Method,Endpoint,Handler,Response Time,Status Code
+POST,/api/pull,PullHandler,,
+POST,/api/generate,GenerateHandler,,
+POST,/api/chat,ChatHandler,,
+POST,/api/embed,EmbedHandler,,
+POST,/api/embeddings,EmbeddingsHandler,,
+POST,/api/create,CreateHandler,,
+POST,/api/push,PushHandler,,
+POST,/api/copy,CopyHandler,,
+DELETE,/api/delete,DeleteHandler,,
+POST,/api/show,ShowHandler,,
+POST,/api/blobs/:digest,CreateBlobHandler,,
+GET,/api/ps,PsHandler,,
+POST,/v1/chat/completions,ChatHandler,,
+POST,/v1/completions,GenerateHandler,,
+POST,/v1/embeddings,EmbedHandler,,
+GET,/v1/models,ListHandler,,
+POST,/api/chat,ChatHandler,1m58s,200
+POST,/api/chat,ChatHandler,21.777482767s,200
+POST,/api/chat,ChatHandler,1m21s,200
